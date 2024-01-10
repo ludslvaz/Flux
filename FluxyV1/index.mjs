@@ -1,14 +1,25 @@
-import  FluxRequest from "./FluxAPI/FluxRequest.mjs" ;
-import  FluxMethods from "./FluxAPI/FluxMethods.mjs";
+import FluxMethods from "./FluxAPI/enum/FluxMethods.mjs"
+import FluxRequest from "./FluxAPI/FluxRequest.mjs"
+import DateFormat from "./FluxAPI/util/DateFormat.mjs"
 
 
-
-const request = new FluxRequest()
 const object = 
+
     {
-        "nome_usuario": "Usu",
-        "email": "usuario1@exaco",
-        "senha_usuario": "udsdk"
-}
-const response = await request.fluxFetch('http://localhost:8080/usuarios')
+ 
+        "nome" : "nome do livro1",
+        "comentario" : "review do livro1" ,
+        "url": "url da imagem do livro",
+        "data" : DateFormat.getDate(),
+        "hoursdate" : DateFormat.getTimer(),
+        "user" : {"id": 1 }
+    }
+
+
+const request = new FluxRequest("http://localhost:8080/blog",FluxMethods.POST,object)
+const response = await request.fluxFetch()
 console.log(response)
+// console.log(request.statusRequest())
+// const a = ["ALO","LO"]
+
+console.log(DateFormat.getDate())

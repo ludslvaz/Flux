@@ -1,49 +1,35 @@
- 
+import FluxMethods from "./enum/FluxMethods.mjs";
+
 export default class FluxRequest {
-    async fluxFetch(...args) {
-        const url = args[0];
-        const httpMethods = args[1];
-        const object = args[2];
-        
-        switch (httpMethods) {
-            case 'GET':
-                console.log('get')
-                return await fetch(url).then(promise => promise.json())
-            case 'POST' : 
-                console.log('post')
-                const headerExPost = { headers: { "Content-Type": "application/json", Accept: "application/json", }, method : httpMethods , body : JSON.stringify(object)}
-                return await fetch(url,headerExPost).then(promise => promise.json())
-            case 'PUT':
-                console.log('PUT')
-                const headerExPut = { headers: { "Content-Type": "application/json", Accept: "application/json", }, method : httpMethods , body : JSON.stringify(object)}
-                return await fetch(url,headerExPut).then(promise => promise.json())
-            case 'DELETE':
-                console.log('DELETE')
-                const headerExDelete = { headers: { "Content-Type": "application/json", Accept: "application/json", }, method : httpMethods }
-                return await fetch(url,headerExDelete).then(promise => promise.JSON())
-            default:
-                console.log('GET')
-                return await fetch(url).then(promise => promise.json())
+  "url-External";
+  "header-External"= {
+    headers: { "Content-Type": "application/json", 
+    Accept: "application/json" },
+    method: "GET",
+    body : null
 
-        }
+  };
 
-        
+  constructor(...configs) {
+      this["url-External"] = configs[0];
+      this["header-External"].method = configs[1]
+      this["header-External"].body = JSON.stringify(configs[2])
+      if(this["header-External"].method === undefined) this["header-External"].method = "GET"
+  }
+    
 
 
+  async fluxFetch(){
+    console.log(this["header-External"])
+    return await fetch(this["url-External"],this["header-External"]).then(promise => promise.json());
+  }
+  statusRequest(){
+    const status = {
+        url : this["url-External"],
+        header : this["header-External"]
+      }
+      return status;
 
-
-
-
-
-
-
-
-
-    }
-
-    getResponse(){
-        console.log(this.response)
-    }
-
+  }
+  
 }
-
