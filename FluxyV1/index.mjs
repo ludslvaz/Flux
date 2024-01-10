@@ -1,25 +1,22 @@
-import FluxMethods from "./FluxAPI/enum/FluxMethods.mjs"
-import FluxRequest from "./FluxAPI/FluxRequest.mjs"
-import DateFormat from "./FluxAPI/util/DateFormat.mjs"
+import Simplifier from "./FluxAPI/util/Simplifier.mjs" 
+import FluxRequest from "./FluxAPI/FluxRequest.mjs"; 
+import FluxMethods from "./FluxAPI/enum/FluxMethods.mjs";
+
+let las = new Simplifier();
+let a = 'jsdd'
+const object = {
+    "nome" : las.CompactWord("nome do livro1"),
+    "comentario" : "review do livro1" ,
+    "url": "url da imagem do livro",
+    "data" : "2023-04-01",
+    "hoursdate" : "23:23:01",
+    "user" : {"id": 1 }
+}
+let post = new FluxRequest('http://localhost:8080/blog');
 
 
-const object = 
-
-    {
- 
-        "nome" : "nome do livro1",
-        "comentario" : "review do livro1" ,
-        "url": "url da imagem do livro",
-        "data" : DateFormat.getDate(),
-        "hoursdate" : DateFormat.getTimer(),
-        "user" : {"id": 1 }
-    }
+let response = await post.fluxFetch()
+console.log(response[0])
 
 
-const request = new FluxRequest("http://localhost:8080/blog")
-const response = await request.fluxFetch()
-console.log(response)
-// console.log(request.statusRequest())
-// const a = ["ALO","LO"]
 
-console.log(DateFormat.getDate())

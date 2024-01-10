@@ -1,4 +1,3 @@
-import FluxMethods from "./enum/FluxMethods.mjs";
 
 export default class FluxRequest {
   "url-External";
