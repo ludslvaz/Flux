@@ -3,7 +3,4 @@ export default class FluxMethods {
         static GET  = 'GET'
         static PUT =  'PUT'
         static DELETE = 'DELETE'
-    
-
-        
 }

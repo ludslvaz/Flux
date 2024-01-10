@@ -16,7 +16,7 @@ const object =
     }
 
 
-const request = new FluxRequest("http://localhost:8080/blog",FluxMethods.POST,object)
+const request = new FluxRequest("http://localhost:8080/blog")
 const response = await request.fluxFetch()
 console.log(response)
 // console.log(request.statusRequest())
