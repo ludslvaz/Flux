@@ -9,17 +9,26 @@ export default class FluxRequest {
 
   };
 
-  constructor(...configs) {
-      this["url-External"] = configs[0];
-      this["header-External"].method = configs[1]
-      this["header-External"].body = JSON.stringify(configs[2])
-      if(this["header-External"].method === undefined) this["header-External"].method = "GET"
-  }
+  constructor(url) {
+      this["url-External"] = url;
+    }
     
 
 
-  async fluxFetch(){
-    console.log(this["header-External"])
+  async fluxFetch(...configs){
+    configs.forEach(set => {
+      switch(typeof set){
+        case "string" : 
+            this["header-External"].method = set
+            break
+        case "object" : 
+            this["header-External"].body = JSON.stringify(set)
+            break
+        default :
+          this["header-External"].body = null
+          this["header-External"].method = "GET"
+      }
+    })
     return await fetch(this["url-External"],this["header-External"]).then(promise => promise.json());
   }
   statusRequest(){

@@ -12,11 +12,14 @@ const object = {
     "hoursdate" : "23:23:01",
     "user" : {"id": 1 }
 }
-let post = new FluxRequest('http://localhost:8080/blog');
+let title = "nome do lvro1"
+console.log(las.CompactWord(title))
+let post = new FluxRequest(`http://localhost:8080/blog/`);
 
 
 let response = await post.fluxFetch()
-console.log(response[0])
+// console.log(response);
+console.log(post.statusRequest())
 
 
 
