@@ -7,22 +7,21 @@ export default class Simplifier {
         return objects;
     }
 
+    CompactTitle(titleArg){
+        titleArg = titleArg
+        .trim()
+        .replaceAll(/\s/g,'-')
+        .concat('-' + this.GeneratedIdentifierNatural())
+        return titleArg
+    }
     CompactWord(wordArg){
         wordArg = wordArg
         .trim()
         .replaceAll(/\s/g,'-')
-        .concat('-' + this.GeneratedIdentifierNatural())
+        
         return wordArg
     }
-    DescompactWord(wordArg){
-        const object = {
-            title : wordArg
-            .slice(0,-6)
-            .replace(/-/g,' '),
-            IdN : wordArg.slice(-5)
-        }
-        return object
-    }
+
      gerarLetras(quantidade) {
         let letras = '';
         for (let i = 0; i < quantidade; i++) {
