@@ -1,4 +1,4 @@
-export default class FluxMethods { 
+export class FluxMethods { 
         static CREATE = 'POST'
         static FIND  = 'GET'
         static UPDATE =  'PUT'

@@ -1,4 +1,4 @@
-export default class DateFormat {
+export class DateFormat {
     static datePure = new Date()
     static year = this.datePure.getFullYear();
     static month = this.datePure.getMonth();

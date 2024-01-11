@@ -1,5 +1,5 @@
 
-export default class Simplifier {
+export class Simplifier {
 
     
      elementCollector(...args){
@@ -21,7 +21,6 @@ export default class Simplifier {
         
         return wordArg
     }
-
      gerarLetras(quantidade) {
         let letras = '';
         for (let i = 0; i < quantidade; i++) {
