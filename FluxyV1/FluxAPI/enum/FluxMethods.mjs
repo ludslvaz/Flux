@@ -1,6 +1,6 @@
 export default class FluxMethods { 
-        static POST = 'POST'
-        static GET  = 'GET'
-        static PUT =  'PUT'
+        static CREATE = 'POST'
+        static FIND  = 'GET'
+        static UPDATE =  'PUT'
         static DELETE = 'DELETE'
 }
