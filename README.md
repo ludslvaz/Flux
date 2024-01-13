@@ -22,13 +22,23 @@
 
      const postTuple = new UserObject("nome-do-usuario","email-de-usuario","senha-de-usuario");
     ```
-  - SearchPost :
+  - NoticyPost :
     * Os parâmetros de entrada do UserObject são as ordem de campos de um post de noticia
      ``` javascript
      import NoticyObject from '.\FluxyV1\FluxAPI\lib\SearchObject'
 
      const postTuple = new NoticyObject("nome-da-noticia","corpo-da-noticia","path-da-img","id-de-usuario-dono-do-post");
     ```
+## 2. SO(Search Object) : É uma secção parece similar a anterior, no entanto ela possui uma finalidade diferente da PO, ela serve como um objeto de busca e analise possuindo campos para unicos de busca e analise.
+  - SO : Os parâmetros de entrada são :
+    ``` javascript
+     import SO from '.\FluxyV1\FluxAPI\lib\SearchObject'
+
+     const postTuple = new SO("nome-de-usuario","senha-de-usuario");
+    ```
+    conselho : use esta classe apenas quando for lidar com autenticação
+    
+     
 
 
 
