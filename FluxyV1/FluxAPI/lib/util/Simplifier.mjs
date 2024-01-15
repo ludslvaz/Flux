@@ -6,7 +6,6 @@ export class Simplifier {
         let objects = args.map(item => document.getElementById(item))
         return objects;
     }
-
     CompactTitle(titleArg){
         titleArg = titleArg
         .trim()
@@ -40,7 +39,8 @@ export class Simplifier {
     GeneratedIdentifierNatural() {
         let codeWord = this.gerarLetras(3)
         let codeNumber = this.gerarNumeros(2)
-        return codeWord + codeNumber;
+        let code = codeWord + codeNumber
+        return code.toUpperCase();
     }
     
 
