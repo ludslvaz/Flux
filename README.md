@@ -29,7 +29,7 @@
 
      const postTuple = new NoticyObject("nome-da-noticia","corpo-da-noticia","path-da-img","id-de-usuario-dono-do-post");
     ```
-## 2. SO(Search Object) : É uma secção parece similar a anterior, no entanto ela possui uma finalidade diferente da PO, ela serve como um objeto de busca e analise possuindo campos para unicos de busca e analise.
+## 2. SO(Search Object) : É uma secção que parece similar a anterior, no entanto ela possui uma finalidade diferente da PO, ela serve como um objeto de busca e analise possuindo campos unicos de busca e analise.
   - SO : Os parâmetros de entrada são :
     ``` javascript
      import SO from '.\FluxyV1\FluxAPI\lib\SearchObject'
