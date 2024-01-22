@@ -1,5 +1,5 @@
+i
 import { UserObject } from "./PostObject/UserObject.mjs";
-import { FluxRequest } from "./launcher/FluxRequest.mjs";
 import { Simplifier } from "./util/Simplifier.mjs";
 
 // const obj = new UserObject('','','')

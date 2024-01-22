@@ -1,5 +1,5 @@
  
-export class FluxRequest{
+export default class FluxRequest{
   "url-External";
   "header-External"= {
     headers: { "Content-Type": "application/json", 
