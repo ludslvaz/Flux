@@ -36,6 +36,14 @@ export class Simplifier {
         return numeros;
     }
     
+    createSlug(str) {
+        return str
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .trim();
+    }
+
     GeneratedIdentifierNatural() {
         let codeWord = this.gerarLetras(3)
         let codeNumber = this.gerarNumeros(2)
